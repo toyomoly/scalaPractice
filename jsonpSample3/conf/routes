@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+# GET     /                           controllers.Application.index
+GET     /getSectionList             controllers.Post.getSectionList()
+GET     /getYukisakiList            controllers.Post.getYukisakiList()
+GET     /updateYukisaki/:v1/:v2/    controllers.Post.updateYukisaki(v1:Int, v2:Int)
+# GET     /getBall/                   controllers.Application.getBall(pattern:Int)
+GET     /getBall/:pattern/          controllers.Application.getBall(pattern:Int)
+GET     /jsonp/getBall/             controllers.Application.getBallWithJsonp(pattern:Int, callback:String)
+GET     /json/getBusho/             controllers.Busho.getBusho()
+GET     /jsonp/getBusho/            controllers.Busho.getBushoWithJsonp(callback:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
